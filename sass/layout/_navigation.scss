@@ -3,14 +3,19 @@ nav {
   top: 0;
   left: 0;
 
-  display: flex;
-  justify-content: center;
+  z-index: 1;
 
+  margin-bottom: 15px;
   padding: 20px 0;
 
   ul {
-    display: relative;
+    display: flex;
+
+    position: absolute;
+    top: 50%;
     left: 50%;
+
+    transform: translate(-50%, -50%);
 
     padding: 0;
 
@@ -19,14 +24,16 @@ nav {
     li {
       display: inline-block;
 
+      margin: 0;
+      border-right: 2px solid $dark-primary-color;
+
+      &:last-of-type {
+        border-right: 0px;
+      }
+
       a {
         display: inline-block;
-
-        width: 100%;
-        height: 100%;
-        
-        margin: 0 10px;
-        padding: 10px 20px;
+        padding: 5px 20px;
       }
     }
   }

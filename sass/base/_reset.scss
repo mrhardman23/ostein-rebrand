@@ -4,3 +4,11 @@
   margin: 0;
   padding: 0;
 }
+
+#preload * {
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  -moz-transition: none !important;
+  -webkit-transition: none !important;
+  transition: none !important;
+}

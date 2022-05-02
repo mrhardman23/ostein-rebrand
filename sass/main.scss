@@ -3,8 +3,11 @@
 
 // base folder imports
 @import "base/color";
-@import "base/typgraphy";
+@import "base/typography";
 @import "base/reset";
 
 // layout folder imports
 @import "layout/navigation";
+
+// pages folder imports
+@import "pages/home";
