@@ -13,8 +13,8 @@ nav {
         transition: ease 0.5s;
 
         &:hover, &:focus {
-          background-color: $dark-background;
-          color: $font-color-dark-bg;
+          background-color: $dark-primary-color;
+          color: scale-color($color: $main-background, $lightness: -4%);
         }
       }
     }
