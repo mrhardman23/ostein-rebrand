@@ -10,8 +10,7 @@ nav {
   ul {
     li {
       a {
-        font-size: 16px;
-
+        font-size: $small-font;
         font-weight: bold;
         text-decoration: none;
       }
@@ -24,23 +23,20 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 32px;
-
-  letter-spacing: 0.2ch;
+  font-size: $largest-font;
+  letter-spacing: 0.2rem;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: $large-font;
+}
+
+footer p {
+  font-weight: bold;
 }
 
 @media all and (min-width: 700px) {
-  nav {
-    ul {
-      li {
-        a {
-          font-size: 20px;
-        }
-      }
-    }
+  h2 {
+    font-size: $larger-font;
   }
 }

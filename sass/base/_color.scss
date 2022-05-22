@@ -6,14 +6,30 @@ nav {
   background-color: scale-color($color: $main-background, $lightness: -4%);
 
   ul {
-    li {
-      a {
-        color: $dark-primary-color;
-
-        transition: ease 0.5s;
-
+    #overlay-content {
+      li {
         &:hover, &:focus {
           background-color: $dark-primary-color;
+          color: scale-color($color: $main-background, $lightness: -4%);
+        }
+    
+        a {
+          color: $dark-primary-color;
+          &:hover, &:focus {
+            color: scale-color($color: $main-background, $lightness: -4%);
+          }
+        }
+      }
+    }
+
+    li {
+      &:hover, &:focus {
+        background-color: $dark-primary-color;
+      }
+
+      a {
+        color: $dark-primary-color;
+        &:hover, &:focus {
           color: scale-color($color: $main-background, $lightness: -4%);
         }
       }
@@ -21,11 +37,19 @@ nav {
   }
 }
 
-#title-card, #product-grid__home {
+#title-card {
   background-color: $dark-background;
   color: $font-color-dark-bg;
 }
 
-#product-grid__home {
-  padding: 20px 10%;
+#grid-item__left, #grid-item__right {
+  img, h2 {
+    background-color: scale-color($color: $main-background, $lightness: -4%);
+    color: $dark-primary-color;
+  }
+}
+
+footer {
+  background-color: scale-color($color: $main-background, $lightness: -4%);
+  color: $dark-primary-color;
 }

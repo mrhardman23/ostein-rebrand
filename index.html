@@ -6,17 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Orysa Stein Photography</title>
   <link rel="stylesheet" href="sass/main.css" />
+  <!-- Content sourced from W3Schools (https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) -->
+  <!-- Loading an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- End of sourced content -->
 </head>
-<body id="preload">
+<body id="preload" onresize="clearMobileNav()">
   <nav>
-    <a href="index.html"><img id="nav__logo"/></a>
-    <ul id="nav-list">
+    <a href="index.html"><img id="nav__logo" src="images/home/instagram.png" alt="The circular logo for Orysa Stein Photography"/></a>
+    <ul id="overlay">
+      <li>
+        <a href="javascript:void(0)" id="close-btn" onclick="closeNav()" aria-hidden="true">&#215;</a>
+      </li>
       <li><a href="index.html" class="nav-links">Home</a></li>
       <li><a href="#" class="nav-links">Services</a></li>
       <li><a href="#" class="nav-links">Prints</a></li>
       <li><a href="#" class="nav-links">Portfolio</a></li>
       <li><a href="https://www.instagram.com/orysasteinphotography/" target="_blank" class="nav-links">Instagram</a></li>
+      <li><a href="#" class="nav-links">Contact</a></li>
     </ul>
+    <a href="javascript:void(0)" id="open-btn" onclick="openNav()" aria-hidden="true">
+        <i class="fa fa-bars"></i>
+    </a>
   </nav>
   <header id="title-card">
     <img id="corner-image__left" src="images/home/title-card-flowers.png" alt="An image of a nicely arranged collection of spring florals."/>
@@ -24,7 +35,7 @@
     <img id="corner-image__right" src="images/home/title-card-flowers.png" alt="The same image of a nicely arranged collection of spring florals rotated 180 degrees."/>
   </header>
   <main>
-    <section id="product-grid__home">
+    <section id="flex-grid__home">
       <div id="grid-item__left">
         <img src="images/home/services.jpg" alt="A man sitting in a field of dandelions embracing his female partner in his lap and kissing her neck."/>
         <h2>Services</h2>
@@ -33,12 +44,28 @@
         <img src="images/home/prints.jpg" alt="A close-up shot of the centre of a purple flower with a green centre."/>
         <h2>Prints</h2>
       </div>
+      <div id="grid-item__left">
+        <img src="images/home/portfolio.jpg" alt="A woman's headshot with the woman sitting in front of a white backdrop."/>
+        <h2>Portfolio</h2>
+      </div>
+      <div id="grid-item__right">
+        <img src="images/home/instagram.png" alt="The circular logo for Orysa Stein Photography with a circular outline around the logo with Instagram's gradient."/>
+        <h2>Instagram</h2>
+      </div>
+      <div id="grid-item__left">
+        <img src="images/home/contact.jpg" alt="A photo of Orysa Stein looking right holding a bouquet of flowers in a field."/>
+        <h2>Contact</h2>
+      </div>
     </section>
   </main>
+  <footer>
+    <p>&#169; Orysa Stein Photography</p>
+  </footer>
   <script>
     window.onload = function (){
       document.getElementsByTagName("body")[0].removeAttribute("id");
     };
   </script>
+  <script src="js/mobileNav.js"></script>
 </body>
 </html>

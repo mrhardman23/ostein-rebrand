@@ -1,4 +1,8 @@
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   position: sticky;
   top: 0;
   left: 0;
@@ -6,34 +10,82 @@ nav {
   z-index: 1;
 
   margin-bottom: 15px;
-  padding: 20px 0;
+
+  a {
+    display: flex;
+    align-items: center;
+    width: 100px;
+
+    float: left;
+
+    img {
+      width: 100%;
+    }
+  }
 
   ul {
-    display: flex;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
+    display: inline-block;
 
     padding: 0;
 
     list-style: none;
 
     li {
-      display: inline-block;
-
-      margin: 0;
-      border-right: 2px solid $dark-primary-color;
-
-      &:last-of-type {
-        border-right: 0px;
-      }
+      display: none;
 
       a {
-        display: inline-block;
-        padding: 5px 20px;
+        display: none;
+      }
+    }
+  }
+  #open-btn {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  nav {
+    ul {
+      width: auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+
+      #overlay-content {
+
+        display: flex;
+        
+        li {
+          display: flex;
+          justify-content: stretch;
+
+          border-right: 2px solid $dark-primary-color;
+
+          &:first-child {
+            display: none;
+          }
+
+          &:first-of-type, &:nth-child(7), &:last-child {
+            border-right: 0px;
+          }
+
+          a {
+            display: flex;
+
+            justify-content: center;
+
+            padding: 2px 0;
+          }
+        }
+      }
+
+      li {
+        display: none;
+      }
+
+      #close-btn, #open-btn {
+        display: none;
       }
     }
   }
