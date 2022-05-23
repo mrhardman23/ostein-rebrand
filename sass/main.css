@@ -335,16 +335,10 @@ nav #open-btn {
   }
 }
 
-footer {
-  margin-top: 30px;
-  padding: 2.5%;
-}
-
 #title-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 25vh;
   position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -354,6 +348,7 @@ footer {
           align-items: center;
   overflow: hidden;
   margin-bottom: 30px;
+  padding: 3rem;
 }
 
 #title-card #corner-image__left, #title-card #corner-image__right {
@@ -375,6 +370,59 @@ footer {
   right: -40px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+@media all and (min-width: 600px) {
+  #title-card #corner-image__left, #title-card #corner-image__right {
+    width: 30%;
+  }
+  #title-card #corner-image__right {
+    top: auto;
+    bottom: -40px;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@media all and (min-width: 1000px) {
+  #title-card #corner-image__left, #title-card #corner-image__right {
+    width: 28%;
+  }
+  #title-card #corner-image__right {
+    top: auto;
+    bottom: -40px;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@media all and (min-width: 1200px) {
+  #title-card #corner-image__left, #title-card #corner-image__right {
+    width: 25%;
+  }
+  #title-card #corner-image__right {
+    top: auto;
+    bottom: -40px;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@media all and (min-width: 1500px) {
+  #title-card #corner-image__left, #title-card #corner-image__right {
+    width: 22%;
+  }
+  #title-card #corner-image__right {
+    top: auto;
+    bottom: -40px;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+footer {
+  margin-top: 30px;
+  padding: 2.5%;
 }
 
 #flex-grid__home {
@@ -430,56 +478,11 @@ footer {
           flex-direction: row-reverse;
 }
 
-@media all and (min-width: 600px) {
-  #title-card #corner-image__left, #title-card #corner-image__right {
-    width: 30%;
-  }
-  #title-card #corner-image__right {
-    top: auto;
-    bottom: -40px;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-}
-
 @media all and (min-width: 1000px) {
-  #title-card #corner-image__left, #title-card #corner-image__right {
-    width: 28%;
-  }
-  #title-card #corner-image__right {
-    top: auto;
-    bottom: -40px;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
   #flex-grid__home a #grid-item__left img, #flex-grid__home a #grid-item__right img {
     width: 35%;
   }
   #flex-grid__home a #grid-item__left h2, #flex-grid__home a #grid-item__right h2 {
     width: 35%;
-  }
-}
-
-@media all and (min-width: 1200px) {
-  #title-card #corner-image__left, #title-card #corner-image__right {
-    width: 25%;
-  }
-  #title-card #corner-image__right {
-    top: auto;
-    bottom: -40px;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-}
-
-@media all and (min-width: 1500px) {
-  #title-card #corner-image__left, #title-card #corner-image__right {
-    width: 22%;
-  }
-  #title-card #corner-image__right {
-    top: auto;
-    bottom: -40px;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
   }
 }

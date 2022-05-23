@@ -63,3 +63,5 @@ function manageMobileNav(){
     }
   }
 }
+
+screen.orientation.addEventListener("change", manageMobileNav());
