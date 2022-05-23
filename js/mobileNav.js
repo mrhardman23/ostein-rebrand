@@ -16,6 +16,7 @@ function openNav() {
 
   closeButtonListItem.ariaHidden = "false";
   closeButtonLink.ariaHidden = "false";
+
   openButtonLink.ariaHidden = "true";
   openButtonContent.ariaHidden = "true";
 }
@@ -28,6 +29,7 @@ function closeNav() {
 
   closeButtonListItem.ariaHidden = "true";
   closeButtonLink.ariaHidden = "true";
+
   openButtonLink.ariaHidden = "false";
   openButtonContent.ariaHidden = "false";
 }
@@ -40,16 +42,11 @@ function manageMobileNav(){
     overlay.removeAttribute("style");
 
     for(i = 0; i < overlayLinks.length; i++){
-      overlayLinks[i].style.transition = "background-color 0.5s ease-in-out, color 0.5s ease-in-out";
+      overlayLinks[i].style.transition = "background-color 0.25s ease-in-out, color 0.25s ease-in-out";
     }
 
     document.getElementsByTagName("body")[0].style.overflow = "visible";
     document.getElementsByTagName("body")[0].style.position = "static";
-
-    closeButtonListItem.ariaHidden = "true";
-    closeButtonLink.ariaHidden = "true";
-    openButtonLink.ariaHidden = "false";
-    openButtonContent.ariaHidden = "false";
 
     closeButtonListItem.ariaHidden = "true";
     closeButtonLink.ariaHidden = "true";
