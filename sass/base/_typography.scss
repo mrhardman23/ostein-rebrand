@@ -7,14 +7,19 @@
 }
 
 nav {
-  ul {
+  #overlay {
     li {
       a {
-        font-size: $small-font;
-        font-weight: bold;
+        font-size: $larger-font;
+
         text-decoration: none;
       }
     }
+  }
+  #open-btn {
+    font-size: $large-font;
+
+    text-decoration: none;
   }
 }
 
@@ -36,6 +41,16 @@ footer p {
 }
 
 @media all and (min-width: 700px) {
+  nav {
+    #overlay {
+      li {
+        a {
+          font-size: $default-font;
+        }
+      }
+    }
+  }
+
   h2 {
     font-size: $larger-font;
   }

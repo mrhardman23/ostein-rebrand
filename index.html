@@ -11,12 +11,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- End of sourced content -->
 </head>
-<body id="preload" onresize="clearMobileNav()">
+<body id="preload" onresize="manageMobileNav()">
   <nav>
-    <a href="index.html"><img id="nav__logo" src="images/home/instagram.png" alt="The circular logo for Orysa Stein Photography"/></a>
+    <a href="index.html" id="nav__logo-link"><img id="nav__logo" src="images/home/instagram.png" alt="The circular logo for Orysa Stein Photography"/></a>
     <ul id="overlay">
-      <li>
-        <a href="javascript:void(0)" id="close-btn" onclick="closeNav()" aria-hidden="true">&#215;</a>
+      <li id="close-btn" aria-hidden="true">
+        <a href="javascript:void(0)" onclick="closeNav()" aria-hidden="true">&#215;</a>
       </li>
       <li><a href="index.html" class="nav-links">Home</a></li>
       <li><a href="#" class="nav-links">Services</a></li>
@@ -26,7 +26,7 @@
       <li><a href="#" class="nav-links">Contact</a></li>
     </ul>
     <a href="javascript:void(0)" id="open-btn" onclick="openNav()" aria-hidden="true">
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars" aria-hidden="true"></i>
     </a>
   </nav>
   <header id="title-card">
@@ -36,30 +36,41 @@
   </header>
   <main>
     <section id="flex-grid__home">
-      <div id="grid-item__left">
-        <img src="images/home/services.jpg" alt="A man sitting in a field of dandelions embracing his female partner in his lap and kissing her neck."/>
-        <h2>Services</h2>
-      </div>
-      <div id="grid-item__right">
-        <img src="images/home/prints.jpg" alt="A close-up shot of the centre of a purple flower with a green centre."/>
-        <h2>Prints</h2>
-      </div>
-      <div id="grid-item__left">
-        <img src="images/home/portfolio.jpg" alt="A woman's headshot with the woman sitting in front of a white backdrop."/>
-        <h2>Portfolio</h2>
-      </div>
-      <div id="grid-item__right">
-        <img src="images/home/instagram.png" alt="The circular logo for Orysa Stein Photography with a circular outline around the logo with Instagram's gradient."/>
-        <h2>Instagram</h2>
-      </div>
-      <div id="grid-item__left">
-        <img src="images/home/contact.jpg" alt="A photo of Orysa Stein looking right holding a bouquet of flowers in a field."/>
-        <h2>Contact</h2>
-      </div>
+      <a href="#">
+        <div id="grid-item__left">
+          <img src="images/home/services.jpg" alt="A man sitting in a field of dandelions embracing his female partner in his lap and kissing her neck."/>
+          <h2>Services</h2>
+        </div>
+      </a>
+      <a href="#">
+        <div id="grid-item__right">
+          <img src="images/home/prints.jpg" alt="A close-up shot of the centre of a purple flower with a green centre."/>
+          <h2>Prints</h2>
+        </div>
+      </a>
+      <a href="#">
+        <div id="grid-item__left">
+          <img src="images/home/portfolio.jpg" alt="A woman's headshot with the woman sitting in front of a white backdrop."/>
+          <h2>Portfolio</h2>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/orysasteinphotography/" target="_blank">
+        <div id="grid-item__right">
+          <img src="images/home/instagram.png" alt="The circular logo for Orysa Stein Photography with a circular outline around the logo with Instagram's gradient."/>
+          <h2>Instagram</h2>
+        </div>
+      </a>
+      <a href="#">
+        <div id="grid-item__left">
+          <img src="images/home/contact.jpg" alt="A photo of Orysa Stein looking right holding a bouquet of flowers in a field."/>
+          <h2>Contact</h2>
+        </div>
+      </a>
     </section>
   </main>
   <footer>
     <p>&#169; Orysa Stein Photography</p>
+    <p>Webmaster: Scott Hardman</p>
   </footer>
   <script>
     window.onload = function (){

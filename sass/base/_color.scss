@@ -4,36 +4,45 @@ body {
 
 nav {
   background-color: scale-color($color: $main-background, $lightness: -4%);
+  box-shadow: 0 2px 5px #121212;
 
-  ul {
-    #overlay-content {
-      li {
-        &:hover, &:focus {
-          background-color: $dark-primary-color;
-          color: scale-color($color: $main-background, $lightness: -4%);
-        }
-    
-        a {
-          color: $dark-primary-color;
-          &:hover, &:focus {
-            color: scale-color($color: $main-background, $lightness: -4%);
-          }
+  #overlay {
+    background-color: $dark-primary-color;
+    background-color: $mobile-nav-bg-color;
+
+    #close-btn {
+      a {
+        &:hover::before, &:hover::after {
+          border: 0 solid transparent;
         }
       }
     }
 
     li {
-      &:hover, &:focus {
-        background-color: $dark-primary-color;
-      }
-
       a {
-        color: $dark-primary-color;
-        &:hover, &:focus {
-          color: scale-color($color: $main-background, $lightness: -4%);
+        background: none;
+        color: scale-color($color: $main-background, $lightness: -4%);
+
+        border: 0;
+
+        &::before, &::after {
+          border: 2px solid transparent;
+        }
+
+        &:hover::before {
+          border-top-color: scale-color($color: $main-background, $lightness: -4%);
+          border-right-color: scale-color($color: $main-background, $lightness: -4%);
+        }
+
+        &:hover::after {
+          border-bottom-color: scale-color($color: $main-background, $lightness: -4%);
+          border-left-color: scale-color($color: $main-background, $lightness: -4%);
         }
       }
     }
+  }
+  #open-btn {
+    color: $dark-primary-color;
   }
 }
 
@@ -52,4 +61,37 @@ nav {
 footer {
   background-color: scale-color($color: $main-background, $lightness: -4%);
   color: $dark-primary-color;
+}
+
+@media screen and (min-width: 700px) {
+  nav {
+    #overlay {
+      background-color: transparent;
+
+      li {
+        border-right: 2px solid $dark-primary-color;
+
+        &:nth-of-type(7) {
+          border-right: 0;
+        }
+
+        a {
+          color: $dark-primary-color;
+
+          &::before, &::after {
+            border: 0;
+          }
+
+          &:hover::before, &:hover::after {
+            border: 0 solid transparent;
+          }
+
+          &:hover {
+            color: scale-color($color: $main-background, $lightness: -4%);
+            background-color: $dark-primary-color;
+          }
+        }
+      }
+    }
+  }
 }

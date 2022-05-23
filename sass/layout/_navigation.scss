@@ -11,7 +11,7 @@ nav {
 
   margin-bottom: 15px;
 
-  a {
+  #nav__logo-link {
     display: flex;
     align-items: center;
     width: 100px;
@@ -23,70 +23,165 @@ nav {
     }
   }
 
-  ul {
-    display: inline-block;
+  #overlay {
+    display: flex;
+    flex-direction: column;
+    
+    /* Code sourced from W3 Schools (https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp) */
+    position: fixed; /* Stay in place */
+    top: 0;
+    right: 0;
 
-    padding: 0;
+    z-index: 1; /* Sit on top */
+
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    width: 0;
+    height: 100%;
+    
+    overflow: hidden; /* Disable scroll */
+    /* End of sourced code */
 
     list-style: none;
 
-    li {
-      display: none;
-
+    #close-btn {
       a {
-        display: none;
+        width: 10%;
+        margin-right: 10px;
+
+        &:hover::before, &:hover::after {
+          transition: none;
+        }
+      }
+    }
+
+    li {
+      display: flex;
+      justify-content: center;
+
+      &:first-child {
+        justify-content: end;
+      }
+
+      /* Border draw code sourced from Giana (https://codepen.io/giana/pen/yYBpVY) */
+      a {
+        display: flex;
+        justify-content: center;
+
+        width: 60%;
+        margin-bottom: 2%;
+
+        position: relative;
+        vertical-align: middle;
+
+        &::before, &::after {
+          box-sizing: inherit;
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+        }
+
+        &::before {
+          top: 0;
+          left: 0;
+        }
+
+        &::after {
+          bottom: 0;
+          right: 0;
+        }
+
+        &:hover::before, &:hover::after {
+          width: 100%;
+          height: 100%;
+        }
+
+        &:hover::before {
+          transition:
+            width 0.125s ease-out, // Width expands first
+            height 0.125s ease-out 0.125s; // And then height
+        }
+
+        &:hover::after {
+          transition:
+            border-color 0s ease-out 0.25s, // Wait for ::before to finish before showing border
+            width 0.125s ease-out 0.25s, // And then exanding width
+            height 0.125s ease-out 0.375s; // And finally height
+        }
       }
     }
   }
+
   #open-btn {
-    display: inline-block;
+    width: 15%;
   }
 }
 
 @media screen and (min-width: 700px) {
   nav {
-    ul {
-      width: auto;
+    #overlay {
+      /* Code sourced from W3 Schools (https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp) */
+      /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+      width: 90%;
 
+      position: static;
+
+      z-index: 0;
+
+      overflow-x: visible;
+
+      transition: none;
+  
       display: flex;
-      flex-direction: column;
-      justify-content: stretch;
+      flex-direction: row;
+      justify-content: space-evenly;
 
-      #overlay-content {
+      li {
+        width: 100%;
+        display: inline-block;
+        justify-content: stretch;
 
-        display: flex;
-        
-        li {
-          display: flex;
-          justify-content: stretch;
+        &:first-of-type {
+          display: none;
+        }
 
-          border-right: 2px solid $dark-primary-color;
+        a {
+          display: inline-block;
+          width: 100%;
+          
+          margin-bottom: 0;
 
-          &:first-child {
+          &::before, &::after {
             display: none;
+            box-sizing: border-box;
+            content: normal;
+
+            position: static;
+            
+            width: auto;
+            height: auto;
           }
 
-          &:first-of-type, &:nth-child(7), &:last-child {
-            border-right: 0px;
+          &::before {
+            top: auto;
+            left: auto;
+          }
+  
+          &::after {
+            bottom: auto;
+            right: auto;
           }
 
-          a {
-            display: flex;
-
-            justify-content: center;
-
-            padding: 2px 0;
+          &:hover::before, &:hover::after {
+            width: auto;
+            height: auto;
           }
         }
       }
+    }
 
-      li {
-        display: none;
-      }
-
-      #close-btn, #open-btn {
-        display: none;
-      }
+    #open-btn {
+      display: none;
     }
   }
 }
